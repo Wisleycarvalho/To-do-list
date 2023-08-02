@@ -22,7 +22,7 @@ function mostrarTarefas() {
     listaDeItens.forEach((item, posicao) => {
 
         li += `
-            <li class="task">
+            <li class="task ${item.concluida && "done"}">
                 <img class = "icones" src="./assets/imagens/check.png" alt="check" onclick = tarefaConcluida(${posicao})>
                 <p> ${item.tarefa}</p>
                 <img class = "icones" src="./assets/imagens/cancel.png" alt="cancel" onclick = "excluirItem(${posicao})">
@@ -32,10 +32,15 @@ function mostrarTarefas() {
     })
 
     lista.innerHTML = li;
+
+    localStorage.setItem('lista', JSON.stringify(listaDeItens))
+
 }
 
 function tarefaConcluida(posicao){
-    console.log(posicao)
+    listaDeItens[posicao].concluida = !listaDeItens[posicao].concluida;
+
+    mostrarTarefas()
 }
 
 function excluirItem(posicao){
@@ -43,3 +48,16 @@ function excluirItem(posicao){
     mostrarTarefas()
     
 }
+
+function recarregarTarefas(){
+    const itensLocalStorage = localStorage.getItem('lista')
+
+    if(itensLocalStorage){
+    listaDeItens = JSON.parse(itensLocalStorage)
+    }
+
+    mostrarTarefas()
+}
+
+recarregarTarefas();
+

@@ -87,3 +87,8 @@ body{
 .task:hover .icones{
     opacity: 1;
 }
+
+.done{
+    background-color: rgb(121, 231, 195);
+    text-decoration: line-through;
+}
