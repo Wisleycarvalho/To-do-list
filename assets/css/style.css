@@ -1,12 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Dancing+Script&family=Playfair+Display:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Abel', sans-serif;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    outline: none;
+}
+
+body{
+    background: url("/assets/imagens/to-do-list.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 .container{
-    background-color: #c7dcf5;
+
+    background-color: #a256e9;
     width: 500px;
     border-radius: 10px;
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 100px;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.4);
 }
 
-img{
+.input {
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+    padding-left: 20px;
+}
+
+.button{
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 110px;
+    background-color:#815aa8;
+    float: right;
+    color: aliceblue;
+    cursor: pointer;
+    
+}
+
+.button:hover{
+    opacity: 0.8;
+}
+
+.button:active{
+    opacity: 0.6;
+}
+
+.list{
+    width: 100%;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.task{
+    background-color: #f2f2f2;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.icones{
     height: 25px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    
+}
+
+.task:hover .icones{
+    opacity: 1;
 }
